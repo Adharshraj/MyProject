@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AddSongs</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+form{
+	max-width: 700px; /* Set a maximum width for the container to prevent it from stretching across the entire page */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    color:white;
+}
+.form-control{
+	width: 300%; /* Make the text input fill the entire width of its container */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    margin-bottom: 10px;
+    color:white;
+}
+.buttu{
+text-align: center;
+}
+nav {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            color:white;
+        }
+nav ul{
+	list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            color:white;
+}
+nav li{
+padding : 20px;
+color:white;
+}
+a{
+color:white;
+}
+table {
+            margin-left: auto;
+            margin-right: auto;
+            color:white;
+            border-collapse: collapse;
+   			width: 60%;
+        }
+th, td {
+   border: 1px solid #dee2e6;
+   padding: 8px;
+   text-align: left;
+   color:white;
+}
+.navbar-brand{
+color: white;
+}
+body {
+    background-image: url('/images/img2.jpg'); /* Replace with your image URL */
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+.table-dis{
+border: 1px solid #dee2e6;
+}
+.nav-link nav-item{
+color: white;
+}
+h1{
+color:white;
+text-align: center;
+}
+</style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<h3>Song already present in the database please add another one</h3>
+<div class="addsong">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="Adminhome"><img src="https://www.pngfind.com/pngs/m/104-1040225_music-symbols-png-music-picto-transparent-png.png" alt="" width="30" height="24">AMRTuneHub</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Homepage">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/viewallsongs">Explore Songs</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="Homepage" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Options
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="viewplaylist">View PlayList</a></li>
+            <li><a class="dropdown-item" href="createuserPlaylist">Create PlayList</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="Logout">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<br/>
+<h1>Add Song</h1>
+<form action="/addsongs" method="post">
+	<label class="form-label">Song Name: <input type="text" class="form-control" id="exampleFormControlInput1" name="name"/></label>
+	<br/><br/>
+	<label class="form-label">Song Artist: <input type="text" class="form-control" id="exampleFormControlInput1" name="artist"/></label>
+	<br/><br/>
+	<label class="form-label">Song Genre: <input type="text" class="form-control" id="exampleFormControlInput1" name="genre"/></label>
+	<br/><br/>
+	<label class="form-label">Song Link: <input type="text" class="form-control" id="exampleFormControlInput1" name="link"/></label>
+	<br/><br/>
+	<div class="buttu">
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+</div>
+</body>
+</html>

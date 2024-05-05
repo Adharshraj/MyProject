@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>your PlayList</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+<style>
+nav {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            color:white;
+        }
+
+a{
+color:white;
+}
+table {
+            margin-left: auto;
+            margin-right: auto;
+            color: White;
+            border-collapse: collapse;
+   			width: 70%;
+   			
+        }
+th, td {
+   border: 1px solid white; /* Set your desired border color and thickness */
+      padding: 8px;
+      text-align: left;
+}
+th {
+    background-color: #62856d; /* Greenish background for table headers */
+}
+
+body {
+    background-image: url('/images/img2.jpg');/* Replace with your image URL */
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+.table-dis{
+border: 1px solid #dee2e6;
+}
+
+</style>
+
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="Homepage"><img src="https://www.pngfind.com/pngs/m/104-1040225_music-symbols-png-music-picto-transparent-png.png" alt="" width="30" height="24">AMRTuneHub</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Homepage">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="exploresongs">Explore Songs</a>
+        </li>
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="Homepage" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Options
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="exploreplaylist">View PlayList</a></li>
+            <li><a class="dropdown-item" href="createuserPlaylist">Create PlayList</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="Logout">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div>
+<br/><br/>
+<table class="table-dis">
+<thead>
+<tr>
+<th> PlayList Id </th>
+<th> PlayList Name </th>
+<th> PlayList Songs </th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="list : ${playlist}">
+<td th:text=${list.id}></td>
+<td th:text=${list.name}></td>
+	<td><ul th:each="song :${list.song}" style="list-style-type:square">
+	<li>
+	<audio controls>
+	<source th:src="${song.link}" type="audio/mpeg"/>
+	</audio>
+	</li>
+	</ul>
+	</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br/><br/>
+</body>
+</html>
